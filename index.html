@@ -295,97 +295,67 @@
 
       </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade" data-aos-delay="100">
-
+      <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm()">
+        <input type="hidden" name="access_key" value="51ae1438-6934-4a09-b742-ddf0aa072a3b">
         <div class="row gy-4">
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Address</h3>
-                <p>Thiruvanathapuram,Kerala,India</p>
-              </div>
-            </div><!-- End Info Item -->
-
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email</h3>
-                <p>contactrithuraj@gmail.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
-          </div>
-
-          <div class="col-lg-8">
-            <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm()">
-              <input type="hidden" name="access_key" value="51ae1438-6934-4a09-b742-ddf0aa072a3b">
-              <div class="row gy-4">
-          
-                  <div class="col-md-6">
-                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
-                      <span class="error-message" id="nameError">Please enter your name.</span>
-                  </div>
-          
-                  <div class="col-md-6">
-                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
-                      <span class="error-message" id="emailError">Please enter a valid email.</span>
-                  </div>
-          
-                  <div class="col-md-12">
-                      <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
-                      <span class="error-message" id="subjectError">Subject cannot be empty.</span>
-                  </div>
-          
-                  <div class="col-md-12">
-                      <textarea class="form-control" name="message" id="message" rows="6" placeholder="Message" required=""></textarea>
-                      <span class="error-message" id="messageError">Message cannot be empty.</span>
-                  </div>
-          
-                  <div class="col-md-12 text-center">
-                    <button type="button" class="btn btn-secondary">Submit</button>
-                  </div>
-          
-              </div>
-          </form>
-          
-          <style>
-              .error-message {
-                  color: red;
-                  font-size: 14px;
-                  display: none;
-              }
-          </style>
-          
-          <script>
-              function validateForm() {
-                  let isValid = true;
-          
-                  let name = document.getElementById("name").value.trim();
-                  let email = document.getElementById("email").value.trim();
-                  let subject = document.getElementById("subject").value.trim();
-                  let message = document.getElementById("message").value.trim();
-          
-                  document.getElementById("nameError").style.display = name ? "none" : "block";
-                  document.getElementById("emailError").style.display = email.match(/^\S+@\S+\.\S+$/) ? "none" : "block";
-                  document.getElementById("subjectError").style.display = subject ? "none" : "block";
-                  document.getElementById("messageError").style.display = message ? "none" : "block";
-          
-                  if (!name || !email.match(/^\S+@\S+\.\S+$/) || !subject || !message) {
-                      isValid = false;
-                  }
-          
-                  return isValid;
-              }
-          </script>
-          
-          </div><!-- End Contact Form -->
-
+    
+            <div class="col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                <span class="error-message" id="nameError">Please enter your name.</span>
+            </div>
+    
+            <div class="col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                <span class="error-message" id="emailError">Please enter a valid email.</span>
+            </div>
+    
+            <div class="col-md-12">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <span class="error-message" id="subjectError">Subject cannot be empty.</span>
+            </div>
+    
+            <div class="col-md-12">
+                <textarea class="form-control" name="message" id="message" rows="6" placeholder="Message" required></textarea>
+                <span class="error-message" id="messageError">Message cannot be empty.</span>
+            </div>
+    
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-secondary">Submit</button>
+            </div>
+    
         </div>
-
-      </div>
+    </form>
+    
+    <style>
+        .error-message {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+    
+    <script>
+        function validateForm(event) {
+            let isValid = true;
+    
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let subject = document.getElementById("subject").value.trim();
+            let message = document.getElementById("message").value.trim();
+    
+            document.getElementById("nameError").style.display = name ? "none" : "block";
+            document.getElementById("emailError").style.display = email.match(/^\S+@\S+\.\S+$/) ? "none" : "block";
+            document.getElementById("subjectError").style.display = subject ? "none" : "block";
+            document.getElementById("messageError").style.display = message ? "none" : "block";
+    
+            if (!name || !email.match(/^\S+@\S+\.\S+$/) || !subject || !message) {
+                isValid = false;
+            }
+    
+            return isValid;
+        }
+    </script>
+    
 
     </section><!-- /Contact Section -->
     
